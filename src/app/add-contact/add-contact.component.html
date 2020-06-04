@@ -1,0 +1,54 @@
+<nz-row nzType="flex" nzJustify="start" nzGutter="8" nzAlign="middle">
+  <nz-col>
+    <div class="id-card-icon">
+      <i nz-icon nzType="idcard" nzTheme="twotone"></i>
+    </div>
+  </nz-col>
+
+  <nz-col class="text_18 alore-primary">
+    Add a contact
+  </nz-col>
+</nz-row>
+<br>
+<br>
+<form nzLayout="vertical" nz-form [formGroup]="addContactForm" class="login-form" (ngSubmit)="onSubmitAddContactForm()">
+  <nz-row nzType="flex" nzGutter="16" nzJustify="center" nzAlign="middle">
+    <nz-col nzSpan="12">
+      <nz-form-item>
+        <nz-form-label [nzNoColon]="true" class="required-star">First Name</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your first name!">
+          <input type="text" nz-input formControlName="firstName" placeholder="John" />
+        </nz-form-control>
+      </nz-form-item>
+    </nz-col>
+    <nz-col nzSpan="12">
+      <nz-form-item>
+        <nz-form-label [nzNoColon]="true">Last Name</nz-form-label>
+        <nz-form-control>
+          <input type="text" nz-input formControlName="lastName" placeholder="Doe" />
+        </nz-form-control>
+      </nz-form-item>
+    </nz-col>
+  </nz-row>
+  <nz-form-item>
+    <nz-form-label [nzNoColon]="true">Email Address</nz-form-label>
+    <nz-form-control>
+      <input type="text" nz-input formControlName="email" placeholder="john.doe@example.com" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzNoColon]="true">Contact ID</nz-form-label>
+    <nz-form-control>
+      <input type="text" nz-input formControlName="contactId" disabled="contactId"/>
+      <div class="alore-secondary text_12" style="margin: 8px">
+        <i nz-icon nzType="lock" nzTheme="outline"></i>&nbsp;&nbsp;A unique user identifier that won't change.
+      </div>
+    </nz-form-control>
+  </nz-form-item>
+  <div class="modal-btn-container">
+    <button nz-button nzType="primary" nzSize="large" [disabled]="addContactForm.invalid">Add contact</button>
+    <button nz-button class="outlined-default-btn" nzType="default" nzSize="large" (click)="onCancelAddContactModalBtn()">Cancel</button>
+  </div>
+</form>
+<br>
+

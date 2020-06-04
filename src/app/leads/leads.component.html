@@ -1,0 +1,43 @@
+<nz-table #leadsDataTable  [nzData]="dataService.leads" [nzShowPagination]="false" [nzBordered]="true">
+  <thead>
+  <tr>
+    <th *ngFor="let column of dataService.leadsColumn"
+        [nzSortFn]="column.sortFn"
+        [nzFilterMultiple]="column.filterMultiple"
+        [nzFilters]="column.listOfFilter"
+        [nzFilterFn]="column.filterFn"
+        class="alore-secondary">
+      <i [ngStyle]="{'transform': column.icon == 'phone' ? 'rotate(90deg)' : ''}" nz-icon [nzType]="column.icon" nzTheme="outline"></i>&nbsp;{{column.name}}
+    </th>
+  </tr>
+  </thead>
+  <tbody cdkDropList (cdkDropListDropped)="drop($event)">
+  <tr *ngFor="let lead of leadsDataTable.data; let i = index" cdkDrag>
+    <td class="alore-primary">{{lead.firstName}}</td>
+    <td class="alore-primary">{{lead.lastName}}</td>
+    <td class="alore-disabled">{{lead.emailId}}</td>
+    <td class="alore-primary">{{lead.company}}</td>
+    <td class="alore-primary">
+      <a nz-dropdown [nzDropdownMenu]="menu">{{lead.website}}</a>
+      <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu nzSelectable>
+          <li nz-menu-item>Add to Contact</li>
+          <li nz-menu-item>Add to Event</li>
+          <li nz-menu-item>Add to Task</li>
+        </ul>
+      </nz-dropdown-menu>
+    </td>
+    <td class="alore-primary">{{lead.location}}</td>
+    <td class="alore-primary">{{lead.date}}</td>
+    <td>
+      <nz-tag *ngIf="i+1 == 1" [nzColor]="'processing'" nzMode="closeable">{{lead.tags}}</nz-tag>
+      <nz-tag *ngIf="i+1 == 2" [nzColor]="'warning'" nzMode="closeable">{{lead.tags}}</nz-tag>
+      <nz-tag *ngIf="i+1 == 3" [nzColor]="'cyan'" nzMode="closeable">{{lead.tags}}</nz-tag>
+      <nz-tag *ngIf="i+1 == 4" [nzColor]="'lime'" nzMode="closeable">{{lead.tags}}</nz-tag>
+      <nz-tag *ngIf="i+1 == 5" [nzColor]="'success'" nzMode="closeable">{{lead.tags}}</nz-tag>
+      <nz-tag *ngIf="i+1 == 6" [nzColor]="'magenta'" nzMode="closeable">{{lead.tags}}</nz-tag>
+    </td>
+    <td class="alore-primary">{{lead.phone}}</td>
+  </tr>
+  </tbody>
+</nz-table>

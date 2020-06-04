@@ -1,0 +1,48 @@
+<nz-row nzType="flex" nzJustify="start" nzGutter="8" nzAlign="middle">
+  <nz-col>
+    <div class="id-card-icon">
+      <i nz-icon nzType="idcard" nzTheme="twotone"></i>
+    </div>
+  </nz-col>
+
+  <nz-col class="text_18 alore-primary">
+    Add a prospect
+  </nz-col>
+</nz-row>
+<br>
+<br>
+<form nzLayout="vertical" nz-form [formGroup]="addProspectForm" class="login-form" (ngSubmit)="onSubmitAddProspectForm()">
+  <nz-row nzType="flex" nzGutter="16" nzJustify="center" nzAlign="middle">
+    <nz-col nzSpan="12">
+      <nz-form-item>
+        <nz-form-label [nzNoColon]="true" class="required-star">First Name</nz-form-label>
+        <nz-form-control nzErrorTip="Please input your first name!">
+          <input type="text" nz-input formControlName="firstName" placeholder="John" />
+        </nz-form-control>
+      </nz-form-item>
+    </nz-col>
+    <nz-col nzSpan="12">
+      <nz-form-item>
+        <nz-form-label [nzNoColon]="true">Last Name</nz-form-label>
+        <nz-form-control>
+          <input type="text" nz-input formControlName="lastName" placeholder="Doe" />
+        </nz-form-control>
+      </nz-form-item>
+    </nz-col>
+  </nz-row>
+  <nz-form-item>
+    <nz-form-label [nzNoColon]="true" class="required-star">Email Address</nz-form-label>
+    <nz-form-control>
+      <input type="text" nz-input formControlName="email" placeholder="john.doe@example.com" />
+      <div class="alore-secondary text_12" style="margin: 8px">
+        To add multiple leads use an <a>import tool</a>
+      </div>
+    </nz-form-control>
+  </nz-form-item>
+  <div class="modal-btn-container">
+    <button nz-button nzType="primary" nzSize="large" [disabled]="addProspectForm.invalid">Add prospect</button>
+    <button nz-button class="outlined-default-btn" nzType="default" nzSize="large" (click)="onCancelAddProspectModalBtn()">Cancel</button>
+  </div>
+</form>
+<br>
+

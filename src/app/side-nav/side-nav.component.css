@@ -1,0 +1,76 @@
+.side-nav-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 100px);
+  margin-top: 80px;
+
+}
+
+.side-nav-container > div > i {
+  font-size: 28px;
+  cursor: pointer;
+  display: block;
+  margin: 30px 0;
+}
+
+.side-nav-container > div > i:hover {
+  color: #1875F0;
+}
+
+.side-nav-container > div:nth-last-child(1) > i {
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.ant-avatar {
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+
+.badgePopup {
+  left: 20px;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5), 0px 5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  width: 360px;
+  height: 700px;
+  position: absolute;
+  bottom: 60px;
+  z-index: 1;
+  background-color: #ffffff;
+  display: none;
+}
+
+.badgePopup-show {
+  display: block;
+}
+
+.badgePopup > div {
+  margin-top: 50px;
+}
+
+.badgePopup > div > img {
+  width: 80px;
+}
+
+.online-dot {
+  height: 8px;
+  width: 8px;
+  background-color: #1BB157;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  bottom: 2px;
+  right: 20px;
+}
+
+.info-container > div:first-child{
+  line-height: 16px;
+  margin-top: 15px;
+}
+
+.info-container > div:nth-last-child(1){
+  margin: 0px 0 15px 0;
+  font-weight: 300
+}

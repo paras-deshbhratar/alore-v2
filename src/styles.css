@@ -1,1 +1,65 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.title {
+  font-weight: 500;
+}
+
+.ant-tabs-bar {
+  border-bottom: none;
+}
+
+.alore-disabled {
+  color: #CCCCCC;
+}
+.alore-primary {
+  color: #3C3C3C !important;
+}
+.alore-secondary {
+  color: #888888 !important;
+}
+
+.text_30 {
+  font-size: 30px;
+}
+
+.text_18 {
+  font-size: 18px;
+}
+
+.text_16 {
+  font-size: 16px;
+}
+
+.text_12 {
+  font-size: 12px;
+}
+
+button {
+  border-radius: 5px !important;
+}
+
+.outlined-default-btn {
+  border: 2px solid #1875F0;
+  box-shadow: 0px 4px 4px rgba(24, 117, 240, 0.5) !important;
+  color: #1875F0;
+}
+
+.ant-modal-mask {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.ant-badge-status-dot {
+  top: 18px !important;
+  right: 12px !important;
+  width: 8px !important;
+  height: 8px !important;
+}
+
+.text_center {
+  text-align: center;
+}

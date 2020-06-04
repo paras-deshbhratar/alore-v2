@@ -1,0 +1,83 @@
+nz-layout {
+  width: 100vw;
+  height: 100vh;
+}
+
+.side-nav {
+  height: 100vh;
+  width: 80px;
+  position: absolute;
+  top: 0;
+  border-right: 1px solid #CCCCCC;
+}
+
+nz-header {
+  height: 80px;
+  border-left: 1px solid #CCCCCC;
+  border-bottom: 1px solid #CCCCCC;
+  padding-left: 100px;
+  display: flex;
+  align-items: center;
+}
+
+nz-content {
+  padding: 15px 100px 20px 115px;
+}
+
+nz-layout, nz-header, nz-content {
+  background: #ffffff;
+}
+
+.new-contact-btn-container {
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+}
+
+.new-contact-btn-container > button {
+  width: 150px;
+}
+
+.tab-container {
+  position: relative;
+}
+
+::ng-deep .vertical-center-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+::ng-deep .vertical-center-modal .ant-modal {
+  top: 0;
+}
+
+/* START : common styles for add-contact and add-prospect component*/
+.id-card-icon {
+  background: rgba(24, 117, 240, 0.25);
+  border: 1px solid #1875F0;
+  border-radius: 50%;
+}
+.id-card-icon > i {
+  font-size: 32px;
+  margin: 12px;
+}
+
+.modal-btn-container > button {
+  width: 150px;
+}
+.modal-btn-container > button:nth-child(1){
+  margin-right: 20px;
+}
+
+.required-star:after {
+  display: inline-block;
+  margin-left: 4px;
+  color: #000000;
+  font-size: 14px;
+  font-family: SimSun, sans-serif;
+  line-height: 1;
+  content: '*';
+}
+/* END : common styles for add-contact and add-prospect component*/
